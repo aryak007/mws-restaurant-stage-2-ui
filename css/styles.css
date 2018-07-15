@@ -62,10 +62,11 @@ nav h1 {
 }
 nav h1 a {
   color: #fff;
-  font-size: 35pt;
+  font-size: 25pt;
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
+
 }
 #breadcrumb {
     padding: 10px 40px 16px;
@@ -101,9 +102,11 @@ nav h1 a {
 }
 
 
+
+
 @media screen and (max-width: 1157px) {
   nav h1 a{
-      font-size: 25pt;
+      font-size: 20pt;
   }
     
 }
@@ -141,7 +144,7 @@ nav h1 a {
   background-color: white;
    border: 2px solid #3397DB;
   font-family: Arial,sans-serif;
-  font-size: 15pt;
+  font-size: 12pt;
   height: 35px;
   letter-spacing: 0;
   width: 100%;

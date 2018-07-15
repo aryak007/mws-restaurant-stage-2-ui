@@ -11,7 +11,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
+  registerServiceWorker(); //Service worker registration
 });
+
+registerServiceWorker = () =>{
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js')
+        .then(function(reg) {
+          // registration worked
+          console.log('Registration succeeded. '+reg);
+        }).catch(function(error) {
+          // registration failed
+          console.log('Registration failed with ' + error);
+        });
+    }
+}
+
 
 /**
  * Fetch all neighborhoods and set their HTML.
@@ -180,6 +195,7 @@ createRestaurantHTML = (restaurant) => {
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   more.setAttribute('aria-label', 'Click on the View Details button to get more information about the restaurant '+restaurant.name+" situated at "+restaurant.address);
+  more.setAttribute('role', 'button');
   li.append(more)
 
   return li
