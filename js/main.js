@@ -180,6 +180,8 @@ createRestaurantHTML = (restaurant) => {
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
+  image.alt = 'Image of '+restaurant.name;
+
   li.append(name);
 
   const neighborhood = document.createElement('p');
@@ -196,6 +198,7 @@ createRestaurantHTML = (restaurant) => {
   more.href = DBHelper.urlForRestaurant(restaurant);
   more.setAttribute('aria-label', 'Click on the View Details button to get more information about the restaurant '+restaurant.name+" situated at "+restaurant.address);
   more.setAttribute('role', 'button');
+  
   li.append(more)
 
   return li
