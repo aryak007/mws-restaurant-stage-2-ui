@@ -95,8 +95,9 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const mediumImage = baseURL + "-medium.jpg";
   const smallImage = baseURL + "-small.jpg";
 
-  image.src = largeImage;
+  //image.src = largeImage;
   //image.sizes = "(max-width: 400px) 400px, (max-width: 600px) 600px, 800px";
+  image.sizes="(max-width: 400px) 100vw, (min-width: 399px) 50vw"
   image.srcset = `${smallImage} 400w, ${mediumImage} 600w, ${largeImage} 800w`;
 
   image.alt = 'Image for '+restaurant.name;
