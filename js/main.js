@@ -19,7 +19,7 @@ registerServiceWorker = () =>{
         navigator.serviceWorker.register('./service-worker.js')
         .then(function(reg) {
           // registration worked
-          console.log('Registration succeeded. '+reg);
+          console.log('Registration succeeded . '+reg);
         }).catch(function(error) {
           // registration failed
           console.log('Registration failed with ' + error);
