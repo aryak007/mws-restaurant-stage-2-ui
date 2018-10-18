@@ -101,7 +101,7 @@ gulp.task('clean', function () {
 	return del('./dist/**/*', { force: true });
 });
 
-gulp.task('scripts:images',gulpSequence('create-large','create-medium','create-small'))
+gulp.task('scripts:images', gulpSequence('create-large', 'create-medium', 'create-small'))
 gulp.task('scripts:prod', gulpSequence('scripts:images', 'styles:prod', 'scripts:main', 'scripts:restaurant'));
 gulp.task('build', gulpSequence('clean', 'copy-files', 'scripts:prod'));
-gulp.task('default',gulpSequence('build','serve'))
+gulp.task('default', gulpSequence('build', 'serve'))
