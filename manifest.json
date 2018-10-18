@@ -1,0 +1,9 @@
+{
+  "name": "Restaurant Reviews",
+  "short_name": "RR",
+  "theme_color": "#3700B3",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/"
+}

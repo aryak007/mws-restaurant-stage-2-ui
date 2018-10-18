@@ -1,4 +1,4 @@
-var staticCacheName = 'mws-restaurant-static-cache-v1';
+const staticCacheName = 'mws-restaurant-static-cache-v1';
 
 self.addEventListener('install', function(event) {
   // TODO: cache /skeleton rather than the root page
@@ -7,9 +7,8 @@ self.addEventListener('install', function(event) {
     caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
         'css/styles.css',
-        'js/dbhelper.js',
-        'js/main.js',
-        'js/restaurant_info.js'
+        'js/main_bundle.js',
+        'js/restaurant_bundle.js'
       ]);
     })
   );
