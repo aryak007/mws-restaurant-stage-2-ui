@@ -1,5 +1,4 @@
 const staticCacheName = 'mws-restaurant-static-cache-v1';
-
 self.addEventListener('install', function(event) {
   // TODO: cache /skeleton rather than the root page
 
@@ -20,7 +19,7 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.filter(function(cacheName) {
-          return cacheName.startsWith('mws-stage-1-cache-') && cacheName != staticCacheName;
+          return cacheName.startsWith('mws-restaurant-') && cacheName != staticCacheName;
         })
         .map(function(cacheName) {
           return caches.delete(cacheName);
@@ -33,7 +32,7 @@ self.addEventListener('activate', function(event) {
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.match(event.request).then(function(cachedResponse) {
+    caches.match(event.request,{ignoreSearch:true}).then(function(cachedResponse) {
       return cachedResponse || fetch(event.request).then(function(response) {
         return caches.open(staticCacheName).then(function(cache) {
           cache.put(event.request, response.clone());
